@@ -35,6 +35,9 @@ class PostsController < ApplicationController
 	private 
 	
 	def post_attr
-	   params.require(:post).permit(:title, :description)
+	  # permit all attributes under post hash
+	  params.require(:post).permit!
+	   # specify which attributes to permit 
+	   #params.permit!(:post).permit(:title, :description)
 	end
 end
